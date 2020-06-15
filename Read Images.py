@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[14]:
+# In[19]:
 
 
 import numpy as np
@@ -29,7 +29,7 @@ import random
 from numpy import genfromtxt
 
 
-# In[15]:
+# In[20]:
 
 
 images_data = []
@@ -40,14 +40,16 @@ for i in range(150):
     #savetxt('data' +str(i)+'.csv', X[i], delimiter=',')
 
 
-# In[16]:
+# In[21]:
 
 
-np.array(images_data).shape
+print(np.array(images_data).shape[0])
 
 
-# In[18]:
+# In[33]:
 
 
-plt.imshow(images_data[120],cmap="gray")
+for x in range(np.array(images_data).shape[0]):
+    plt.imshow(images_data[x],cmap="gray")
+    plt.savefig('image_' +str(x)+'.png')
 
