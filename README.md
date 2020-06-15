@@ -8,7 +8,7 @@ https://www.kaggle.com/bachrr/covid-chest-xray/data
 
 
 
-Running Instructions for GAN - COVID.py and Read Images.py
+## Running Instructions for GAN - COVID.py and Read Images.py
   1. The datasets should downloaded into a folder from kaggle, with the above two following links from kaggle. 
   2. After running the GAN - COVID.py file, the genearator will save a number artificially generated 64x64 csv files. 
   3. Then proceed to run Read Images.py. This file will convert the csv number files to gray-scale images. 
