@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[12]:
+# In[1]:
 
 
 import os
@@ -64,7 +64,7 @@ def define_generator(latent_dim):
  
 
 def define_gan(g_model, d_model):
-    d_model.trainable = Fals
+    d_model.trainable = False
     model = Sequential()
     model.add(g_model)
     model.add(d_model)
@@ -170,13 +170,13 @@ dataset = load_real_samples()
 train(g_model, d_model, gan_model, dataset, latent_dim)
 
 
-# In[3]:
+# In[ ]:
 
 
-g_model
+print(gan_model)
 
 
-# In[4]:
+# In[ ]:
 
 
 from keras.models import load_model
@@ -185,7 +185,7 @@ from matplotlib import pyplot
 import os
 
 
-# In[7]:
+# In[ ]:
 
 
 # generate points in latent space as input for the generator
@@ -201,26 +201,32 @@ latent_points = generate_latent_points(100, 150)
 X = model.predict(latent_points)
 
 
-# In[8]:
+# In[ ]:
+
+
+print(X.shape)
+
+
+# In[ ]:
 
 
 X = X.reshape(150,64,64)
 
 
-# In[9]:
+# In[ ]:
 
 
 from numpy import asarray
 from numpy import savetxt
 
 
-# In[10]:
+# In[ ]:
 
 
-X[0].shape
+print(X[0].shape)
 
 
-# In[11]:
+# In[ ]:
 
 
 i=0
@@ -231,5 +237,5 @@ for i in range(X.shape[0]):
 # In[ ]:
 
 
-plt.imshow(X[0])
+
 
